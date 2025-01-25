@@ -17,17 +17,16 @@ public class CameraFollowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Calculate the new camera position with the Y offset
-        Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, transform.position.z);
+        // Calculate the new camera position with the Y offset but follow only the X position
+        Vector3 newPos = new Vector3(target.position.x, transform.position.y, transform.position.z);
 
         // Apply smoothing to the camera's movement
         transform.position = Vector3.Slerp(transform.position, newPos, followSpeed * Time.deltaTime);
 
-        // Keep the camera within the defined horizontal and vertical bounds
+        // Keep the camera within the defined horizontal bounds (minX and maxX)
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
-        float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
 
-        // Update the camera's position with clamped values
-        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        // Update the camera's position with clamped X value
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
     }
 }

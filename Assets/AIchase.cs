@@ -15,7 +15,8 @@ public class AIchase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position,character.transform.position);
+        distance = Vector2.Distance(transform.position,character.transform.position );
+        distance -= 5;
         Vector2 direction = character.transform.position - transform.position;
 
         direction.Normalize();

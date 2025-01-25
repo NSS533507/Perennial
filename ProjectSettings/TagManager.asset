@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - MC
+  - Boss
+  - Sword
+  - Fairy
   layers:
   - Default
   - TransparentFX
