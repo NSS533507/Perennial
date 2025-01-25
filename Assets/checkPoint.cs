@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class checkPoint : MonoBehaviour
 {
-    //    public void OnTriggerEnter(Collider2D collision)
-    //    {
-    //        if (collision.CompareTag("character"))
-    //        {
-    //            //go
-    //        }
-    //    }
-    //}
+    public GameObject checkPointObject;
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            
+        }
+    }
 }

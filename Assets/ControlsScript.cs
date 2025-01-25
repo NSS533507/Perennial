@@ -10,10 +10,10 @@ public class ControlsScript : MonoBehaviour
     public TrailRenderer tr;
     public float jumpForce = 10f;
     public float fallMultiplier = 2.5f;
-    private float Move;
+    public float Move = 0;
     public float Speed = 5f;
 
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     public float dashingPower = 24f;
     public float dashingTime = 0.2f;
@@ -69,7 +69,7 @@ public class ControlsScript : MonoBehaviour
         }
     }
 
-    bool isGrounded()
+    public bool isGrounded()
     {
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.8f, 0.3f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
